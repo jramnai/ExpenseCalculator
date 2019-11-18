@@ -3,5 +3,11 @@
 	Index 
 {% endblock %}
 {% block content %}
-	<p>Your total expense is: {{total_expense}}</p>
+	{% if user.is_authenticated %}
+		<p>Hello <b>{{user.username}}!</b></p>
+		<p>Your total expense is: {{total_expense}}</p>
+	{% else %}
+		<a href="/login">Login</a>
+		<a href="/signup">signup</a>
+	{% endif %}
 {% endblock %}
