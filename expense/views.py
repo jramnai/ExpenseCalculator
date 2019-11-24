@@ -8,11 +8,19 @@ from .forms import SignUpForm
 from .models import Expense
 
 # Create your views here.
+
+
 def index(request):
-	"""
-	"""
-	total_expense = Expense.objects.aggregate(Sum('amount'))
-	return render(request, 'expense/index.html', {'total_expense': total_expense['amount__sum']})
+    """
+    """
+    total_expense = Expense.objects.aggregate(Sum('amount'))
+    return render(
+        request,
+        'expense/index.html',
+        {
+            'total_expense': total_expense['amount__sum']
+        }
+    )
 
 
 def signup(request):

@@ -5,6 +5,8 @@ from django.db import models
 from model_utils.models import TimeStampedModel
 
 # Create your models here.
+
+
 class Category(models.Model):
     name = models.CharField(max_length=200)
 
