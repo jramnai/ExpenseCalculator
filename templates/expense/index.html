@@ -5,7 +5,10 @@
 {% block content %}
 	{% if user.is_authenticated %}
 		<p>Hello <b>{{user.username}}!</b></p>
-		<p>Your total expense is: {{total_expense}}</p>
+        <p>Your total expense is: {{total_expense}}</p>
+        
+        
+        <a href="/logout">logout</a>
 	{% else %}
 		<a href="/login">Login</a>
 		<a href="/signup">signup</a>
